@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user;
+
+option java_multiple_files = true;
+option java_package = "com.unionpay.rpc.benchmark.grpc.user";
+option java_outer_classname = "UserProto";
+
+service UserService {
+    rpc getUser (UserRequest) returns (UserReply) {}
+
+    rpc getUserName (UserRequest) returns (UserReplyStr) {}
+}
+
+message UserRequest {
+    int64 userId = 1;
+}
+
+message UserReply {
+    User user = 1;
+}
+
+message UserReplyStr {
+    string userName = 1;
+}
+
+message User {
+    int64 userId = 1;
+    string userName = 2;
+    string phone = 3;
+    string email = 4;
+    string address = 5;
+    int32 age = 6;
+    int32 gender = 7;
+    int32 userStatus = 8;
+    int64 createdAt = 9;
+    int64 lastModified = 10;
+}

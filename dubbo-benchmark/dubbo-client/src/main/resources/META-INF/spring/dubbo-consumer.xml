@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-client" owner="unionpay" organization="dubbox"/>
+
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181/"/>-->
+
+    <!--uncomment this if you want to test dubbo's monitor-->
+    <!--<dubbo:monitor protocol="registry"/>-->
+
+    <!--<dubbo:reference id="bidService" interface="com.alibaba.dubbo.demo.bid.BidService"/>-->
+    <dubbo:reference id="userService" interface="com.unionpay.rpc.benchmark.dubbo.api.service.UserService"
+            url="dubbo://127.0.0.1:20881/com.unionpay.rpc.benchmark.dubbo.api.service.UserService"/>
+
+    <bean class="com.unionpay.rpc.benchmark.dubbo.client.DubboClient" init-method="start">
+        <!--<property name="bidService" ref="bidService" />-->
+        <property name="userService" ref="userService" />
+    </bean>
+
+    <!-- directly connect to provider to simulate the access to non-dubbo rest services -->
+    <!--<dubbo:reference id="anotherUserRestService" interface="com.alibaba.dubbo.demo.user.facade.AnotherUserRestService" url="rest://localhost:8888/services/"/>-->
+
+</beans>

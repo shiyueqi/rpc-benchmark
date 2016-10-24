@@ -1,0 +1,2 @@
+java -Xms2G -Xmx2G  -cp ./target/classes;./target/lib/*  -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc1.log -Dwrite.statistics=true com.unionpay.rpc.benchmark.thrift.common.ThriftTest 5 300000 false true > thrift_benchmark_string_5_300000.log
+pause
