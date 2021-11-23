@@ -13,10 +13,10 @@
     <!--<dubbo:monitor protocol="registry"/>-->
 
     <!--<dubbo:reference id="bidService" interface="com.alibaba.dubbo.demo.bid.BidService"/>-->
-    <dubbo:reference id="userService" interface="com.unionpay.rpc.benchmark.dubbo.api.service.UserService"
-            url="dubbo://127.0.0.1:20881/com.unionpay.rpc.benchmark.dubbo.api.service.UserService"/>
+    <dubbo:reference id="userService" interface="com.shiyueqi.rpc.benchmark.dubbo.api.service.UserService"
+            url="dubbo://127.0.0.1:20881/com.shiyueqi.rpc.benchmark.dubbo.api.service.UserService"/>
 
-    <bean class="com.unionpay.rpc.benchmark.dubbo.client.DubboClient" init-method="start">
+    <bean class="com.shiyueqi.rpc.benchmark.dubbo.client.DubboClient" init-method="start">
         <!--<property name="bidService" ref="bidService" />-->
         <property name="userService" ref="userService" />
     </bean>

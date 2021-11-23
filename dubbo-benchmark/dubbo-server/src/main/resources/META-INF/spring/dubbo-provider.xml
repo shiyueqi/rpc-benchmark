@@ -54,9 +54,9 @@
     <!--<dubbo:protocol name="hessian" port="8890"/>-->
     <!--<dubbo:protocol name="webservice" port="8892"/>-->
 
-    <dubbo:service interface="com.unionpay.rpc.benchmark.dubbo.api.service.UserService" ref="userService"  protocol="dubbo"/>
+    <dubbo:service interface="com.shiyueqi.rpc.benchmark.dubbo.api.service.UserService" ref="userService" protocol="dubbo"/>
 
-    <bean id="userService" class="com.unionpay.rpc.benchmark.dubbo.server.impl.UserServiceImpl" />
+    <bean id="userService" class="com.shiyueqi.rpc.benchmark.dubbo.server.impl.UserServiceImpl" />
 
 
 </beans>

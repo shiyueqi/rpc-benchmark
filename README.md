@@ -2,7 +2,7 @@
 
 ## 简介
 
-- 分别应用了 grpc/Thrift/dubbo/magpie rpc framework 进行了应用和测试
+- 分别应用了 grpc/Thrift/dubbo rpc framework 进行了应用和测试
 - netty boss线程池大小为10，worker线程池大小为200
 - 通过startProvider.bat脚本，启动server端
 - 通过类似grpc-obj-1-300000.bat脚本，启动client端
@@ -21,7 +21,7 @@
 4. 使用了protobuf插件，通过.proto文件生成java类
 5. 拥有流式调用，阻塞调用，异步调用等特性
 6. 支持了thrift序列化协议
-7. 通过IDL语音，生成类；通过HTTP/2 协议实现跨平台，跨语言的支持
+7. 通过IDL语言，生成类；通过HTTP/2 协议实现跨平台，跨语言的支持
 8. 暂时推出了1.0.1版本，但缺点仍然较多
 8.1 不支持服务发现与注册
 8.2 不支持集群
@@ -63,16 +63,4 @@
 1. mvn clean install -DskipTests
 2. 运行startProvider.bat，启动server
 3. 运行dubbo-obj-1-300000.bat，启动client
-4. 等待benchmark性能测试日志生成
-
-
-
-# Magpie
-## Magpie Rpc Framework
-1. union pay(银联) 自助研发rpc framework，未开源，涉及商业机密，在此不叙述
-
-## Magpie benchmark
-1. mvn clean install -DskipTests
-2. 运行startProvider.bat，启动server
-3. 运行magpie-obj-1-300000.bat，启动client
 4. 等待benchmark性能测试日志生成

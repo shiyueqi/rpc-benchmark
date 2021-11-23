@@ -1,2 +1,2 @@
-java -Xms2G -Xmx2G -cp .;./dubbo-client/target/classes;./dubbo-client/target/lib/* -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc1.log -Dwrite.statistics=true com.unionpay.rpc.benchmark.dubbo.common.DubboTest 5 300000 false true > dubbo_benchmark_string_5_300000.log
+java -Xms2G -Xmx2G -cp .;./dubbo-client/target/classes;./dubbo-client/target/lib/* -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc1.log -Dwrite.statistics=true DubboTest 5 300000 false true > dubbo_benchmark_string_5_300000.log
 pause
